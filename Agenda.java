@@ -51,11 +51,15 @@ public class Agenda
         System.out.println();
     }
 
-    /**
-     * metodo Permita mostrar un listado ordenado de los objetos en función de una de sus características, 
-     */
-    public void ordenarPorNombre()
-    {
+    // /**
+     // * metodo Permita mostrar un listado ordenado de los objetos en función de una de sus características, 
+     // */
+    // public void ordenarPorNombre()
+    // {
     
-    }
+    // }
+    // public ArrayList<Contacto> localizaMayorLoImprimeYLoBorra(ArrayList<Contacto> coleccion)
+    // {
+    
+    // }
 }

@@ -11,43 +11,19 @@ public class Contacto
     //nombre de los contactos
     private String nombre;
     //numero de telefono de los contacto
-    private String telefono;
+    private int telefono;
     //direccion de los contactos
     private String direccion;
 
     /**
      * Constructor for objects of class Agenda
      */
-    public Contacto(String nombre,String telefono,String direccion)
+    public Contacto(String nombre,int telefono,String direccion)
     {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
 
-    }
-
-    /**
-     * return nombre
-     */
-    public String getNombre()
-    {
-        return nombre;
-    }
-
-    /**
-     * Return the telefono.
-     */
-    public String getTelefono()
-    {
-        return telefono;
-    }
-
-    /**
-     * Return the file direccion.
-     */
-    public String getDireccion()
-    {
-        return direccion;
     }
 
     /**

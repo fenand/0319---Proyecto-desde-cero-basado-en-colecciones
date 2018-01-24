@@ -24,7 +24,7 @@ public class Agenda
     /**
      * Metodo para añadir contactos a las paginas amarillas
      */
-    public void addContactos(String nombre, String telefono,String direccion)
+    public void addContactos(String nombre, int telefono,String direccion)
     {
         contactos.add(new Contacto(nombre,telefono,direccion));
     }
@@ -37,4 +37,25 @@ public class Agenda
         return id;
     }
 
+    /**
+     * Metodo para mostra la informacion de cada contacto por pantalla numerados
+     * 
+     */
+    public void mostrasContactos()
+    {
+        System.out.println("Lista de Contactos : ");
+
+        for(Contacto contactos : contactos) {
+            System.out.println(contactos.getContactoCompleto());
+        }
+        System.out.println();
+    }
+
+    /**
+     * metodo Permita mostrar un listado ordenado de los objetos en función de una de sus características, 
+     */
+    public void ordenarPorNombre()
+    {
+    
+    }
 }

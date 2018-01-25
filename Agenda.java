@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;   
 /**
  * Write a description of class paginasAmarillas here.
  *
@@ -147,6 +148,20 @@ public class Agenda
 
             for(Contacto Contacto : contactosOrdenadosDeMayorAMenorTelefono) {
                 System.out.println(Contacto.getContactoCompleto());
+            }
+        }
+    }
+
+    /**
+     * Elimina los contactos que contengan el nombre del contacto
+     * introducido por el usuario por parametro String
+     */
+    public void removeContacto(String contacto) {
+        Iterator<Contacto> it = contactos.iterator();
+
+        while(it.hasNext()) {
+            if(it.next().obtenerNombre().contains(contacto)) {
+                it.remove();
             }
         }
     }

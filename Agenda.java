@@ -16,10 +16,10 @@ public class Agenda
     /**
      * Constructor for objects of class paginasAmarillas
      */
-    public Agenda(int id)
+    public Agenda()
     {
         contactos = new ArrayList<Contacto>();
-        this.id = id;
+        this.id = 1;
     }
 
     /**
@@ -28,6 +28,7 @@ public class Agenda
     public void addContactos(String nombre, int telefono,String direccion,int edad)
     {
         contactos.add(new Contacto(nombre,telefono,direccion,edad));
+        id = id +1;
     }
 
     /**
@@ -150,6 +151,17 @@ public class Agenda
                 System.out.println(Contacto.getContactoCompleto());
             }
         }
+    }
+
+    /**
+     * Modifica el nombre,telefono,direccion y edad de los contactos 
+     * mediante el id .
+     */
+    public void modificarContacto(int id,String nombre,int telefono, String direccion, int edad) {
+        contactos.get(id - 1).fijarNombre(nombre);
+        contactos.get(id - 1).fijarEdad(telefono);
+        contactos.get(id - 1).fijarDireccion(direccion);
+        contactos.get(id - 1).fijarEdad(edad);
     }
 
     /**

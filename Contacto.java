@@ -36,6 +36,39 @@ public class Contacto
     {
         return nombre;  
     }
+
+    /**
+     * fijar nombre
+     */
+    public void fijarNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    /**
+     * fijar edad
+     */
+    public void fijarTelefono(int telefono)
+    {
+        this.telefono = telefono;
+    }
+
+    /**
+     * fijar edad
+     */
+    public void fijarDireccion(String direccion)
+    {
+        this.direccion = direccion;
+    }  
+
+    /**
+     * fijar edad
+     */
+    public void fijarEdad(int edad)
+    {
+        this.edad = edad;
+    }
+
     /**
      * metodo para devolver el nombre del contacto
      */
@@ -43,6 +76,7 @@ public class Contacto
     {
         return telefono;  
     }
+
     /**
      * metodo para devolver el nombre del contacto
      */
@@ -50,6 +84,7 @@ public class Contacto
     {
         return edad;  
     }
+
     /**
      * metodo para devolver el nombre del contacto
      */
@@ -58,7 +93,6 @@ public class Contacto
         return direccion;  
     }
 
-    
     /**
      * Return detalles contacto.
      */

@@ -1,5 +1,4 @@
 
-
 /**
  * The test class AgendaTest.
  *
@@ -17,13 +16,13 @@ public class AgendaTest2
 
     public void Test()
     {
-        Agenda agenda1 = new Agenda(1); 
+        Agenda agenda1 = new Agenda(); 
 
-        agenda1.addContactos("laura", 19,"era1", 53456435);
-        agenda1.addContactos("Fernando2", 18,"era1", 1034563456);
-        agenda1.addContactos("Fernando3", 11,"era1", 206456);
-        agenda1.addContactos("Fernando4", 35,"era1", 256456345);
-        agenda1.addContactos("Fernando5", 77,"era1", 3435645);
+        agenda1.addContactos("laura",53456435 ,"era1",19 );
+        agenda1.addContactos("Fernando2",1034563456,"era1",  18);
+        agenda1.addContactos("Fernando3",206456,"era1",  11);
+        agenda1.addContactos("Fernando4",  256456345,"era1",35);
+        agenda1.addContactos("Fernando5", 3435645,"era1", 77);
         System.out.println("Todos los contactos: ");
         agenda1.mostrasContactos();
         System.out.println();
@@ -36,9 +35,16 @@ public class AgendaTest2
         agenda1.contactosOrdenadosDeMayorAMenorNumeroDeTelefono();
         System.out.println();
 
+        agenda1.modificarContacto(4,"Fernandorewr2",45649856,"erwera44",1);
+        System.out.println("Modificado el contacto 4");
+        System.out.println();
+        System.out.println("Todos los contactos: ");
+        agenda1.mostrasContactos();
+        System.out.println();
+       
         System.out.println();
 
-        System.out.println("Eliminamos el contacto que contenga el nombre indicado por parametro .");
+        System.out.println("Eliminamos el contacto que contenga el nombre indicado por nombre, --Laura--.");
         agenda1.removeContacto("laura");
         System.out.println();
 

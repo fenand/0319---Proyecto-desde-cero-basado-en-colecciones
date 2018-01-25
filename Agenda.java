@@ -24,9 +24,9 @@ public class Agenda
     /**
      * Metodo para añadir contactos a las paginas amarillas
      */
-    public void addContactos(String nombre, int telefono,String direccion)
+    public void addContactos(String nombre, int telefono,String direccion,int edad)
     {
-        contactos.add(new Contacto(nombre,telefono,direccion));
+        contactos.add(new Contacto(nombre,telefono,direccion,edad));
     }
 
     /**
@@ -35,6 +35,14 @@ public class Agenda
     public int getId()
     {
         return id;
+    }
+
+    /**
+     * metodo para devolver el numero de contactos
+     */
+    public void getNumeroDeContactos()
+    {
+        System.out.println(contactos.size());  
     }
 
     /**
@@ -51,15 +59,95 @@ public class Agenda
         System.out.println();
     }
 
-    // /**
-     // * metodo Permita mostrar un listado ordenado de los objetos en función de una de sus características, 
-     // */
-    // public void ordenarPorNombre()
-    // {
-    
-    // }
-    // public ArrayList<Contacto> localizaMayorLoImprimeYLoBorra(ArrayList<Contacto> coleccion)
-    // {
-    
-    // }
+    /**
+     * metodo Permita mostrar un listado ordenado de los objetos 
+     * en función de su edad y telefono, 
+     */
+    public ArrayList<Contacto> ordenadoDeMayorAMenorPorEdad(ArrayList<Contacto> coleccion) {
+        ArrayList<Contacto> contactosConMayorEdad = new ArrayList<Contacto>();
+        int edadMaxima = 0;
+        int contador = 0;
+
+        if(coleccion.size() > 0) {
+            for(Contacto Contacto : coleccion) {
+                if(Contacto.obtenerEdad() > edadMaxima) {
+                    edadMaxima = Contacto.obtenerEdad();
+                }
+            }
+
+            while(contador < coleccion.size()) {
+                if(coleccion.get(contador).obtenerEdad() == edadMaxima) {
+                    contactosConMayorEdad.add(coleccion.get(contador));
+                    coleccion.remove(coleccion.get(contador));
+                    contador -= 1;
+                }
+                contador += 1;
+            }
+        }
+
+        return contactosConMayorEdad;
+    }
+
+    public ArrayList<Contacto> ordenadoDeMayorAMenorTelefono(ArrayList<Contacto> coleccion) {
+        ArrayList<Contacto> contactosConMayorTelefono = new ArrayList<Contacto>();
+        int telefonoMaximo = 0;
+        int contador = 0;
+
+        if(coleccion.size() > 0) {
+            for(Contacto Telefono : coleccion) {
+                if(Telefono.obtenerTelefono() > telefonoMaximo) {
+                    telefonoMaximo = Telefono.obtenerTelefono();
+                }
+            }
+
+            while(contador < coleccion.size()) {
+                if(coleccion.get(contador).obtenerTelefono() == telefonoMaximo) {
+                    contactosConMayorTelefono.add(coleccion.get(contador));
+                    coleccion.remove(coleccion.get(contador));
+                    contador -= 1;
+                }
+                contador += 1;
+            }
+        }
+
+        return contactosConMayorTelefono;
+    }
+
+    /**
+     * Ordena de mayor a menor edad los contactos y los muestra por pantalla.
+     */
+    public void contactosOrdenadosDeMayorAMenorEdad() {
+        ArrayList<Contacto> contactosOrdenadosDeMayorAMenorPorEdad = new ArrayList<Contacto>(); 
+        ArrayList<Contacto> copiaDeContactos = new ArrayList<Contacto>();
+
+        if(contactos.size() > 0) {
+            copiaDeContactos.addAll(contactos);
+            while(copiaDeContactos.size() != 0) {
+                contactosOrdenadosDeMayorAMenorPorEdad.addAll(ordenadoDeMayorAMenorPorEdad(copiaDeContactos));
+            }
+
+            for(Contacto Contacto : contactosOrdenadosDeMayorAMenorPorEdad) {
+                System.out.println(Contacto.getContactoCompleto());
+            }
+        }
+    }
+
+    /**
+     * Ordena de mayor a menor edad los contactos y los muestra por pantalla.
+     */
+    public void contactosOrdenadosDeMayorAMenorNumeroDeTelefono() {
+        ArrayList<Contacto> contactosOrdenadosDeMayorAMenorTelefono = new ArrayList<Contacto>(); 
+        ArrayList<Contacto> copiaDeContactos = new ArrayList<Contacto>();
+
+        if(contactos.size() > 0) {
+            copiaDeContactos.addAll(contactos);
+            while(copiaDeContactos.size() != 0) {
+                contactosOrdenadosDeMayorAMenorTelefono.addAll(ordenadoDeMayorAMenorTelefono(copiaDeContactos));
+            }
+
+            for(Contacto Contacto : contactosOrdenadosDeMayorAMenorTelefono) {
+                System.out.println(Contacto.getContactoCompleto());
+            }
+        }
+    }
 }
